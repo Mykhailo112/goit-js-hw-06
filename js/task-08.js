@@ -13,5 +13,7 @@ alert(message)
     };
 }
 formLogin.reset()
+console.log(`Email: ${email.value}, Password: ${password.value}`);
+
 }
 

@@ -1,18 +1,13 @@
 let validInput = document.getElementById('validation-input')
-let dataLength = Number(document.getElementById("data-length"));
-let inputLength = validInput.value.length;
-
+let dataLength = validInput.getAttribute('data-length');
+console.log(dataLength);
 validInput.addEventListener("blur", () => {
-if (Number(validInput)===Number(inputLength)) {
-    if (!validInput.classList.contains('invalid')) {
-        validInput.classList.add('valid')
-    } else {
-        validInput.classList.replace('invalid','valid')
-    }
-}else{
-    if (!validInput.classList.contains('valid')) {
-        validInput.classList.add('invalid')
-    } else {
-        validInput.classList.replace('valid','invalid')
-    }
-}})
+    let inputLength = validInput.value.length;
+if (Number(dataLength)===Number(inputLength)) {
+    validInput.classList.add('valid')
+    validInput.classList.remove('invalid')
+} else {
+    validInput.classList.add('invalid')
+    validInput.classList.remove('valid')
+}
+})
